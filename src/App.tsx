@@ -80,12 +80,21 @@ function App() {
       favFoods: ["milk"],
       birthYear: 2021,
     },
+    {
+      name: "Captain Catface",
+      species: "Sea Cattain",
+      favFoods: ["fish, rum"],
+      birthYear: 2016,
+    },
   ]);
+
+  const catCount = cats.length;
   console.log("Our pretties 😻: ", cats);
+  console.log(cats.length);
   return (
     <>
       <Navbar />
-      <Header />
+      <Header catCount={catCount} />
 
       <main>
         <div className="cards__wrapper">
