@@ -13,6 +13,7 @@ function App(): JSX.Element {
   const [dogs, setDogs] = useState<Array<Cat>>(dogData);
 
   const catCount = cats.length;
+  const dogCount = dogs.length;
   console.log("Our pretties 😻: ", cats);
   console.log(cats.length);
   console.log(catData);
@@ -22,7 +23,7 @@ function App(): JSX.Element {
   return (
     <>
       <Navbar />
-      <Header catCount={catCount} />
+      <Header catCount={catCount} dogCount={dogCount} />
 
       <main>
         <div className="cards__wrapper">
