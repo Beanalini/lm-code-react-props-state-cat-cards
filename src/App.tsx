@@ -7,7 +7,6 @@ import Cat from "./data/cat";
 import Card from "./components/cat_card";
 import catData from "./data/cat-data";
 import dogData from "./data/dog-data";
-import images from "./data/cat-image-data";
 
 function App(): JSX.Element {
   const [cats, setCats] = useState<Array<Cat>>(catData);
@@ -19,7 +18,7 @@ function App(): JSX.Element {
   console.log(catData);
   console.log("doggy data", dogs);
   console.log(dogData);
-  console.log(images[0]);
+
   return (
     <>
       <Navbar />

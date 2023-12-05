@@ -1,6 +1,5 @@
 import CatImage from "./cat_image";
 import images from "../data/cat-image-data";
-import Image from "../data/image";
 
 interface CardProps {
   name: string;
@@ -36,7 +35,7 @@ const Card: React.FC<CardProps> = ({
         />
       )}
       <p className="card__text">Species: {species}</p>
-      <p className="card__text">Favourite Food(s): {favFoods}</p>
+      <p className="card__text">Favourite Food(s): {favFoods.join(", ")}</p>
       <p className="card__text">Birth Year: {birthYear}</p>
     </div>
   );
