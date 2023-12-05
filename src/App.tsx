@@ -4,7 +4,7 @@ import Navbar from "./components/navbar";
 import Header from "./components/header";
 import Footer from "./components/footer";
 import Cat from "./data/cat";
-import CatCard from "./components/cat_card";
+import Card from "./components/cat_card";
 import catData from "./data/cat-data";
 
 function App(): JSX.Element {
@@ -22,7 +22,7 @@ function App(): JSX.Element {
       <main>
         <div className="cards__wrapper">
           {cats.map((cat, index) => (
-            <CatCard
+            <Card
               key={cat.id}
               name={cat.name}
               species={cat.species}

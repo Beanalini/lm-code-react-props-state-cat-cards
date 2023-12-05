@@ -2,7 +2,7 @@ import Cat from "../data/cat";
 import CatImage from "./cat_image";
 import images from "../data/cat-image-data";
 
-interface CatCardProps {
+interface CardProps {
   name: string;
   species: string;
   favFoods: Array<string>;
@@ -10,7 +10,7 @@ interface CatCardProps {
   catIndex: number;
 }
 
-const CatCard: React.FC<CatCardProps> = ({
+const Card: React.FC<CardProps> = ({
   name,
   species,
   favFoods,
@@ -39,4 +39,4 @@ const CatCard: React.FC<CatCardProps> = ({
   );
 };
 
-export default CatCard;
+export default Card;
