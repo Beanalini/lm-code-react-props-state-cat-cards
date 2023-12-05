@@ -6,14 +6,20 @@ import Footer from "./components/footer";
 import Cat from "./data/cat";
 import Card from "./components/cat_card";
 import catData from "./data/cat-data";
+import dogData from "./data/dog-data";
+import images from "./data/cat-image-data";
 
 function App(): JSX.Element {
   const [cats, setCats] = useState<Array<Cat>>(catData);
+  const [dogs, setDogs] = useState<Array<Cat>>(dogData);
 
   const catCount = cats.length;
   console.log("Our pretties 😻: ", cats);
   console.log(cats.length);
   console.log(catData);
+  console.log("doggy data", dogs);
+  console.log(dogData);
+  console.log(images[0]);
   return (
     <>
       <Navbar />
@@ -28,7 +34,20 @@ function App(): JSX.Element {
               species={cat.species}
               favFoods={cat.favFoods}
               birthYear={cat.birthYear}
-              catIndex={index}
+              index={index}
+              pet={cat.pet}
+            />
+          ))}
+          ;
+          {dogs.map((dog, index) => (
+            <Card
+              key={dog.id}
+              name={dog.name}
+              species={dog.species}
+              favFoods={dog.favFoods}
+              birthYear={dog.birthYear}
+              index={index}
+              pet={dog.pet}
             />
           ))}
         </div>

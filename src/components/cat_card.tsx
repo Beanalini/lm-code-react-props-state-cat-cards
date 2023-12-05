@@ -1,13 +1,14 @@
-import Cat from "../data/cat";
 import CatImage from "./cat_image";
 import images from "../data/cat-image-data";
+import Image from "../data/image";
 
 interface CardProps {
   name: string;
   species: string;
   favFoods: Array<string>;
   birthYear: number;
-  catIndex: number;
+  index: number;
+  pet?: string;
 }
 
 const Card: React.FC<CardProps> = ({
@@ -15,21 +16,23 @@ const Card: React.FC<CardProps> = ({
   species,
   favFoods,
   birthYear,
-  catIndex,
+  index,
+  pet,
 }) => {
   //   console.log("cat card receiving props from App!? props received are:", props);
-
+  console.log(index);
   return (
     <div className="card">
       <h3 className="card__text card__header">{name}</h3>
-      {catIndex < images.length && (
+
+      {pet !== "dog" && index < images.length && (
         <CatImage
-          image={images[catIndex].image}
-          altText={images[catIndex].altText}
-          licenceType={images[catIndex].licenceType}
-          licenceUrl={images[catIndex].licenceUrl}
-          attributionName={images[catIndex].attributionName}
-          attributionUrl={images[catIndex].attributionUrl}
+          image={images[index].image}
+          altText={images[index].altText}
+          licenceType={images[index].licenceType}
+          licenceUrl={images[index].licenceUrl}
+          attributionName={images[index].attributionName}
+          attributionUrl={images[index].attributionUrl}
         />
       )}
       <p className="card__text">Species: {species}</p>

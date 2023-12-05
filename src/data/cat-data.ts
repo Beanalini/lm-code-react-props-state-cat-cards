@@ -81,6 +81,9 @@ const catData: Array<Cat> = [
     birthYear: 2016,
   },
 ];
-catData.forEach((cat) => (cat.id = uuidv4()));
+catData.forEach((cat) => {
+  cat.id = uuidv4();
+  cat.pet = "cat";
+});
 
 export default catData;

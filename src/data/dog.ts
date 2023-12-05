@@ -1,1 +1,8 @@
-export default interface Dog {}
+export default interface Dog {
+  id?: string;
+  name: string;
+  species: string;
+  favFoods: Array<string>;
+  birthYear: number;
+  pet?: string;
+}
