@@ -5,6 +5,7 @@ import Header from "./components/header";
 import Footer from "./components/footer";
 import Cat from "./data/cat";
 import Card from "./components/cat_card";
+import PetForm from "./components/pet_form";
 import catData from "./data/cat-data";
 import dogData from "./data/dog-data";
 
@@ -51,6 +52,8 @@ function App(): JSX.Element {
             />
           ))}
         </div>
+
+        <PetForm />
       </main>
 
       <Footer />
