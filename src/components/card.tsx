@@ -18,8 +18,6 @@ const Card: React.FC<CardProps> = ({
   index,
   pet,
 }) => {
-  //   console.log("cat card receiving props from App!? props received are:", props);
-
   return (
     <div className="card">
       <h3 className="card__text card__header">{name}</h3>

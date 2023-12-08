@@ -4,7 +4,7 @@ import Navbar from "./components/navbar";
 import Header from "./components/header";
 import Footer from "./components/footer";
 import Cat from "./data/cat";
-import Card from "./components/cat_card";
+import Card from "./components/card";
 import PetForm from "./components/pet_form";
 import catData from "./data/cat-data";
 import dogData from "./data/dog-data";
@@ -24,10 +24,7 @@ function App(): JSX.Element {
   newPet.forEach((newPet) => (newPet.pet === "cat" ? catCount++ : dogCount++));
 
   console.log("Our pretties 😻: ", cats);
-  console.log(cats.length);
-  console.log(catData);
   console.log("doggy data", dogs);
-  console.log(dogData);
 
   return (
     <>
@@ -47,7 +44,7 @@ function App(): JSX.Element {
               pet={cat.pet}
             />
           ))}
-          ;
+
           {dogs.map((dog, index) => (
             <Card
               key={dog.id}

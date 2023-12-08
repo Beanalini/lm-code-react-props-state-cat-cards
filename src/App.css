@@ -135,6 +135,12 @@ body {
 .icon {
   max-width: 1.875em;
 }
+
+.form-title {
+  font-family: "Cattino";
+  text-align: center;
+  color: var(--navy);
+}
 .form-wrapper {
   display: flex;
   flex-direction: column;
@@ -170,7 +176,7 @@ body {
 
 .submit-btn {
   background-color: var(--navy);
-  color: var(--white);
+  color: var(--yellow);
   border-color: var(--black);
   width: 100%;
   font-size: 1.5rem;
