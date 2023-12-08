@@ -6,7 +6,7 @@ interface CardProps {
   species: string;
   favFoods: Array<string>;
   birthYear: number;
-  index: number;
+  index?: number;
   pet?: string;
 }
 
@@ -24,7 +24,7 @@ const Card: React.FC<CardProps> = ({
     <div className="card">
       <h3 className="card__text card__header">{name}</h3>
 
-      {pet !== "dog" && index < images.length && (
+      {index !== undefined && index < images.length && (
         <CatImage
           image={images[index].image}
           altText={images[index].altText}

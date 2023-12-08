@@ -54,7 +54,6 @@ function App(): JSX.Element {
               species={dog.species}
               favFoods={dog.favFoods}
               birthYear={dog.birthYear}
-              index={index}
               pet={dog.pet}
             />
           ))}
@@ -65,7 +64,6 @@ function App(): JSX.Element {
               species={pet.species}
               favFoods={pet.favFoods}
               birthYear={pet.birthYear}
-              index={index}
               pet={pet.pet}
             />
           ))}
