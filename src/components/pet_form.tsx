@@ -35,65 +35,79 @@ const PetForm: React.FC<AddPetFormProps> = ({ addNewPet }) => {
   };
 
   return (
-    <form onSubmit={newPet}>
-      <fieldset>
-        <legend>Add a new Pet</legend>
-        <label htmlFor="petType"></label>
-        <label>
-          Name:
-          <input
-            type="text"
-            name="addName"
-            value={addName}
-            onChange={(event) => {
-              setAddName(event.target.value);
-            }}
-          />
-        </label>
-        <label>
-          Species:
-          <input
-            value={addSpecies}
-            onChange={(event) => {
-              setAddSpecies(event.target.value);
-            }}
-          />
-        </label>
-        <label>
-          Favourite Food(s):
-          <input
-            value={addFavFood}
-            onChange={(event) => {
-              setAddFavFood(event.target.value);
-            }}
-          />
-        </label>
-        <label>
-          Birth Year:
-          <input
-            value={addBirthYear}
-            onChange={(event) => {
-              setAddBirthYear(event.target.value);
-            }}
-          />
-        </label>
-        <label>
-          Select Pet Type:
-          <select
-            name="addPetType"
-            value={addPetType}
-            onChange={(event) => {
-              setAddPetType(event.target.value);
-            }}
-          >
-            <option value="cat">cat</option>
-            <option value="dog">Dog</option>
-          </select>
-        </label>
+    <div className="form-wrapper">
+      <form onSubmit={newPet} className="formCard">
+        <fieldset>
+          <legend>Add your Pet</legend>
+          <label htmlFor="petType"></label>
+          <div>
+            <label>
+              Name:
+              <input
+                type="text"
+                name="addName"
+                value={addName}
+                onChange={(event) => {
+                  setAddName(event.target.value);
+                }}
+              />
+            </label>
+          </div>
+          <div>
+            <label>
+              Species:
+              <input
+                value={addSpecies}
+                onChange={(event) => {
+                  setAddSpecies(event.target.value);
+                }}
+              />
+            </label>
+          </div>
+          <div>
+            <label>
+              Favourite Food(s):
+              <input
+                value={addFavFood}
+                onChange={(event) => {
+                  setAddFavFood(event.target.value);
+                }}
+              />
+            </label>
+          </div>
+          <div>
+            <label>
+              Birth Year:
+              <input
+                value={addBirthYear}
+                onChange={(event) => {
+                  setAddBirthYear(event.target.value);
+                }}
+              />
+            </label>
+          </div>
+          <div>
+            <label>
+              Select Pet Type:
+              <select
+                name="addPetType"
+                value={addPetType}
+                onChange={(event) => {
+                  setAddPetType(event.target.value);
+                }}
+              >
+                <option value="cat">cat</option>
+                <option value="dog">Dog</option>
+              </select>
+            </label>
+          </div>
 
-        <button type="submit">Submit</button>
-      </fieldset>
-    </form>
+          <button className="submit-btn" type="submit">
+            Submit
+          </button>
+        </fieldset>
+      </form>
+    </div>
   );
 };
 export default PetForm;
