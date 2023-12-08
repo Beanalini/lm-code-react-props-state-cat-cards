@@ -12,16 +12,17 @@ import dogData from "./data/dog-data";
 function App(): JSX.Element {
   const [cats, setCats] = useState<Array<Cat>>(catData);
   const [dogs, setDogs] = useState<Array<Cat>>(dogData);
-
   const [newPet, setNewPet] = useState<Array<Cat>>([]);
-  console.log("New pet: " + newPet);
 
+  //call back function sent as prop to PetForm
   const addNewPet = (petNew: Cat) => {
-    setNewPet([petNew]);
+    setNewPet([...newPet, petNew]);
   };
-  console.log(newPet);
-  const catCount = cats.length;
-  const dogCount = dogs.length;
+
+  let catCount = cats.length;
+  let dogCount = dogs.length;
+  newPet.forEach((newPet) => (newPet.pet === "cat" ? catCount++ : dogCount++));
+
   console.log("Our pretties 😻: ", cats);
   console.log(cats.length);
   console.log(catData);

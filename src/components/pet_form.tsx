@@ -27,6 +27,11 @@ const PetForm: React.FC<AddPetFormProps> = ({ addNewPet }) => {
     };
     //console.log(addPet);
     addNewPet(addPet);
+    setAddName("");
+    setAddSpecies("");
+    setAddFavFood("");
+    setAddBirthYear("");
+    setAddPetType("");
   };
 
   return (
