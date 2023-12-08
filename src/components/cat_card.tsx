@@ -19,7 +19,7 @@ const Card: React.FC<CardProps> = ({
   pet,
 }) => {
   //   console.log("cat card receiving props from App!? props received are:", props);
-  console.log(index);
+
   return (
     <div className="card">
       <h3 className="card__text card__header">{name}</h3>

@@ -1,14 +1,19 @@
 import { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
+import Cat from "../data/cat";
 
-function PetForm(): JSX.Element {
+interface AddPetFormProps {
+  addNewPet(addPet: Cat): void;
+}
+
+const PetForm: React.FC<AddPetFormProps> = ({ addNewPet }) => {
   const [addName, setAddName] = useState<string>("");
   const [addSpecies, setAddSpecies] = useState<string>("");
   const [addFavFood, setAddFavFood] = useState<string>("");
   const [addBirthYear, setAddBirthYear] = useState<string>("");
   const [addPetType, setAddPetType] = useState<string>("cat");
 
-  const addNewPet = (event: React.FormEvent<HTMLFormElement>) => {
+  const newPet = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
     //create cat/dog object to pass into Card component
@@ -16,14 +21,16 @@ function PetForm(): JSX.Element {
       id: uuidv4(),
       name: addName,
       species: addSpecies,
-      favFood: [addFavFood],
-      birthYear: addBirthYear,
+      favFoods: [addFavFood],
+      birthYear: +addBirthYear, //returns a string coerce to number
       pet: addPetType,
     };
-    console.log(addPet.name);
+    //console.log(addPet);
+    addNewPet(addPet);
   };
+
   return (
-    <form onSubmit={addNewPet}>
+    <form onSubmit={newPet}>
       <fieldset>
         <legend>Add a new Pet</legend>
         <label htmlFor="petType"></label>
@@ -83,5 +90,5 @@ function PetForm(): JSX.Element {
       </fieldset>
     </form>
   );
-}
+};
 export default PetForm;

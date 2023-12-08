@@ -13,6 +13,13 @@ function App(): JSX.Element {
   const [cats, setCats] = useState<Array<Cat>>(catData);
   const [dogs, setDogs] = useState<Array<Cat>>(dogData);
 
+  const [newPet, setNewPet] = useState<Array<Cat>>([]);
+  console.log("New pet: " + newPet);
+
+  const addNewPet = (petNew: Cat) => {
+    setNewPet([petNew]);
+  };
+  console.log(newPet);
   const catCount = cats.length;
   const dogCount = dogs.length;
   console.log("Our pretties 😻: ", cats);
@@ -51,9 +58,19 @@ function App(): JSX.Element {
               pet={dog.pet}
             />
           ))}
+          {newPet.map((pet, index) => (
+            <Card
+              key={pet.id}
+              name={pet.name}
+              species={pet.species}
+              favFoods={pet.favFoods}
+              birthYear={pet.birthYear}
+              index={index}
+              pet={pet.pet}
+            />
+          ))}
         </div>
-
-        <PetForm />
+        <PetForm addNewPet={addNewPet} />
       </main>
 
       <Footer />
